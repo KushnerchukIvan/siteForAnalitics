@@ -1,0 +1,269 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f8f5f2;
+    color: #333;
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(35, 22, 15, 0.95);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #c89b6d;
+}
+
+/* burger */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("../images/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    color: white;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #c89b6d;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a8744a;
+}
+
+/* ==========================
+   SECTIONS
+========================== */
+
+.features, .menu, .reviews {
+    padding: 100px 0;
+}
+
+/* features */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* menu */
+
+.menu {
+    background: #ece4dd;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.product img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* reviews */
+
+.review-list {
+    display: flex;
+    gap: 20px;
+}
+
+.review {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #23160f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==========================
+   SCROLL ANIMATION
+========================== */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================
+   SCROLL BUTTON
+========================== */
+
+#scrollTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #6f4e37;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .cards,
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .review-list {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #23160f;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
